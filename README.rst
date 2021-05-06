@@ -28,3 +28,5 @@ Algorithm list
    
    * The letter-logs are ordered lexicographically ignoring identifiers, with the identifier used in case of ties.
    * The digit-logs should be put in their original order.
+
+6. Kth largest element in a stream in linear time.

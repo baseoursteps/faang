@@ -19,29 +19,31 @@ main(int argc, char* argv[])
 
   int no = 0;
 
-  int I, J, K, L;
-  I = 0;
-  J = N - 1;
-  K = N - 1;
-  L = 0;
+  int T/*op*/, R/*ight*/, B/*ottom*/, L/*eft*/;
 
-  while (I != N) {
-    for (int i = I; i <= J; i++)
-      vals[I][i] = ++no;
+  T = 0; //top
+  R = N - 1; //right
+  B = N - 1; //bottom
+  L = 0; //left
 
-    I++;
+  while (T != N) {
 
-    for (int i = I; i <= K; i++)
-      vals[i][J] = ++no;
+    for (int i = L; i <= R; i++)
+      vals[T][i] = ++no;
 
-    J--;
+    T++;
 
-    for (int i = J; i >= L; i--)
-      vals[K][i] = ++no;
+    for (int i = T; i <= B; i++)
+      vals[i][R] = ++no;
 
-    K--;
+    R--;
 
-    for (int i = K; i >= I; i--)
+    for (int i = R; i >= L; i--)
+      vals[B][i] = ++no;
+
+    B--;
+
+    for (int i = B; i >= T; i--)
       vals[i][L] = ++no;
 
     L++;

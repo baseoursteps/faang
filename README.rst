@@ -30,3 +30,13 @@ Algorithm list
    * The digit-logs should be put in their original order.
 
 6. Kth largest element in a stream in linear time.
+
+7. Spiral matrix
+
+   Given an N generate a square matrix with value 1..n²
+
+   N=4
+   1   2  3 4
+   12 13 14 5
+   11 16 15 6
+   10  9  8 7

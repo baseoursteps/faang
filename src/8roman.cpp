@@ -165,11 +165,15 @@ roman(size_t arab)
           break;
       }
 
+      // 9 == 10 - 1 or 90 = 100 - 10
+      // concat 1(I) then 10(X) or 10(X) then 100(C)
       if (current == smallest->first - zeros) {
 
         ss << nums.at(smallest->first - current);
         ss << smallest->second;
 
+        // 7 == 5 + (7-5) * 1 or 70 == 50 + (70-50) * 10
+        // concat 5 then 1 (7-5)/1 times  or 50 then 10 (70-50)/10 times
       } else {
 
         --smallest;
@@ -180,6 +184,7 @@ roman(size_t arab)
       }
     }
 
+    // don't forget that we're going in reverse
     zeros /= 10;
   }
 

@@ -56,3 +56,4 @@ Algorithm list
 	Otherwise it becomes empty.
 	First and last cell don't have two neighbors.
 	
+11. Deep copy a linked list with an extra random pointer

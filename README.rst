@@ -57,3 +57,8 @@ Algorithm list
 	First and last cell don't have two neighbors.
 	
 11. Deep copy a linked list with an extra random pointer
+
+12. Number of islands
+
+	Given an map of land(1) and water(0) count all the islands. Any two pieces of land form an
+	island vertically or horizontally.

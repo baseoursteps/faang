@@ -44,3 +44,7 @@ Algorithm list
      10  9  8 7
 
 8. Roman Numbers to Integer and Vice Versa
+
+9. Maximum sum sub array
+
+   Given an array on N integers find the span with the greatest sum and return this sum.

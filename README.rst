@@ -48,3 +48,11 @@ Algorithm list
 9. Maximum sum sub array
 
    Given an array on N integers find the span with the greatest sum and return this sum.
+
+10. Prison cell after N days
+
+    There are eight(8) cells in a row and each is either occupied(true) or empty(false).
+    If a cell has two empty or occupied neighbors it becomes occupied.
+	Otherwise it becomes empty.
+	First and last cell don't have two neighbors.
+	

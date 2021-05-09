@@ -66,3 +66,8 @@ Algorithm list
 13. Merge intervals
 
 	Given a set of intervals, merge them if possible.
+
+14. K closest points to origin
+
+	Given a list of coordinates(x,y) find the closest from (0,0) using euclidean
+	distance.

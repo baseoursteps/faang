@@ -11,6 +11,11 @@
 // 0 0 0
 // 2
 
+// 0 0 0
+// 0 0 0
+// 0 0 0
+// 6
+
 using namespace std;
 
 size_t
@@ -47,6 +52,9 @@ main()
 
   // 2
   vector<vector<bool>> map{ { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
+
+  // 12
+  // vector<vector<bool>> map(3, vector<bool>(3, false));
 
   // first check if start and begin are accesible
   if (map.front().front() == 1 || map.back().back() == 1) {

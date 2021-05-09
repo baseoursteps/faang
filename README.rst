@@ -71,3 +71,8 @@ Algorithm list
 
 	Given a list of coordinates(x,y) find the closest from (0,0) using euclidean
 	distance.
+
+15. Unique paths
+
+	Given a 2d matrix count how many paths exist from start(0,0) to end(n,n) if
+	there are obstacles in the way.

@@ -62,3 +62,7 @@ Algorithm list
 
 	Given an map of land(1) and water(0) count all the islands. Any two pieces of land form an
 	island vertically or horizontally.
+
+13. Merge intervals
+
+	Given a set of intervals, merge them if possible.

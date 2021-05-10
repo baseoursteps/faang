@@ -94,4 +94,7 @@ Algorithm list
 	words must have a common prefix with the searched. if there are more
 	than three available return the minimums.
 
-	
+19. Find min in rotated sorted array
+
+	given a sorted array and considering that at some pivot it has been rotated
+	find the minimum

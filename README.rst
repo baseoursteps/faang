@@ -83,3 +83,6 @@ Algorithm list
 	Given an array of ropes of different lengths what is the minimum cost to connect all?
 
 	
+17. Generate parantheses
+
+	N pairs of parantheses, generate all valid combinations

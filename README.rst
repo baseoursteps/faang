@@ -86,3 +86,12 @@ Algorithm list
 17. Generate parantheses
 
 	N pairs of parantheses, generate all valid combinations
+
+18. Autosuggestions
+
+	given a list of strings and a searchword we want to suggest at most
+	three strings based on the searched word from the list. the suggested
+	words must have a common prefix with the searched. if there are more
+	than three available return the minimums.
+
+	

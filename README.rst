@@ -98,3 +98,8 @@ Algorithm list
 
 	given a sorted array and considering that at some pivot it has been rotated
 	find the minimum
+
+20. Coin change
+
+	Fewest number of coins to make up a particular amount
+

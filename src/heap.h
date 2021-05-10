@@ -17,13 +17,13 @@ rchild(size_t i)
 
 template<typename T>
 void
-heapify(std::vector<T>& vals, size_t n, size_t root, bool max = true)
+heapify(T& vals, size_t n, size_t root, bool max)
 {
   auto compare = [vals, max](size_t c, size_t r) {
     if (max)
-      return vals.at(r) > vals.at(c);
-    else
       return vals.at(r) < vals.at(c);
+    else
+      return vals.at(r) > vals.at(c);
   };
 
   auto m = root;
@@ -38,19 +38,19 @@ heapify(std::vector<T>& vals, size_t n, size_t root, bool max = true)
 
   if (m != root) {
     std::swap(vals.at(m), vals.at(root));
-    heapify(vals, n, m);
+    heapify(vals, n, m, max);
   }
 }
 
 template<typename T>
 void
-heapsort(std::vector<T>& vals)
+heapsort(T& vals, bool max = true)
 {
   for (ssize_t i = vals.size() / 2 - 1; i >= 0; --i)
-    heapify(vals, vals.size(), i);
+    heapify(vals, vals.size(), i, max);
 
   for (size_t i = vals.size() - 1; i > 0; --i) {
     std::swap(vals.at(0), vals.at(i));
-    heapify(vals, i, 0);
+    heapify(vals, i, 0, max);
   }
 }

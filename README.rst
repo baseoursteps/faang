@@ -76,3 +76,10 @@ Algorithm list
 
 	Given a 2d matrix count how many paths exist from start(0,0) to end(n,n) if
 	there are obstacles in the way.
+
+16. Minimum cost to connect all ropes
+
+	Two ropes can be connected and the cost to connect them is the sum of their lengths.
+	Given an array of ropes of different lengths what is the minimum cost to connect all?
+
+	

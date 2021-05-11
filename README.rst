@@ -53,53 +53,58 @@ Algorithm list
 
     There are eight(8) cells in a row and each is either occupied(true) or empty(false).
     If a cell has two empty or occupied neighbors it becomes occupied.
-	Otherwise it becomes empty.
-	First and last cell don't have two neighbors.
-	
+    Otherwise it becomes empty.
+    First and last cell don't have two neighbors.
+    
 11. Deep copy a linked list with an extra random pointer
 
 12. Number of islands
 
-	Given an map of land(1) and water(0) count all the islands. Any two pieces of land form an
-	island vertically or horizontally.
+    Given an map of land(1) and water(0) count all the islands. Any two pieces of land form an
+    island vertically or horizontally.
 
 13. Merge intervals
 
-	Given a set of intervals, merge them if possible.
+    Given a set of intervals, merge them if possible.
 
 14. K closest points to origin
 
-	Given a list of coordinates(x,y) find the closest from (0,0) using euclidean
-	distance.
+    Given a list of coordinates(x,y) find the closest from (0,0) using euclidean
+    distance.
 
 15. Unique paths
 
-	Given a 2d matrix count how many paths exist from start(0,0) to end(n,n) if
-	there are obstacles in the way.
+    Given a 2d matrix count how many paths exist from start(0,0) to end(n,n) if
+    there are obstacles in the way.
 
 16. Minimum cost to connect all ropes
 
-	Two ropes can be connected and the cost to connect them is the sum of their lengths.
-	Given an array of ropes of different lengths what is the minimum cost to connect all?
+    Two ropes can be connected and the cost to connect them is the sum of their lengths.
+    Given an array of ropes of different lengths what is the minimum cost to connect all?
 
-	
+    
 17. Generate parantheses
 
-	N pairs of parantheses, generate all valid combinations
+    N pairs of parantheses, generate all valid combinations
 
 18. Autosuggestions
 
-	given a list of strings and a searchword we want to suggest at most
-	three strings based on the searched word from the list. the suggested
-	words must have a common prefix with the searched. if there are more
-	than three available return the minimums.
+    given a list of strings and a searchword we want to suggest at most
+    three strings based on the searched word from the list. the suggested
+    words must have a common prefix with the searched. if there are more
+    than three available return the minimums.
 
 19. Find min in rotated sorted array
 
-	given a sorted array and considering that at some pivot it has been rotated
-	find the minimum
+    given a sorted array and considering that at some pivot it has been rotated
+    find the minimum
 
 20. Coin change
 
-	Fewest number of coins to make up a particular amount
+    Fewest number of coins to make up a particular amount
+
+21. Word break
+
+    Given a word S and a dictionary containing non-empty words determine if
+    S can be segmented in one or more dictionary words.
 

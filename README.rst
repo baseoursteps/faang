@@ -108,3 +108,8 @@ Algorithm list
     Given a word S and a dictionary containing non-empty words determine if
     S can be segmented in one or more dictionary words.
 
+22. Subtree of another tree
+
+    Given two non-empty binary trees check if the first is an identical
+    subtree of the second.
+

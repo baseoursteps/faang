@@ -7,6 +7,12 @@
 
 using namespace std;
 
+// the idea here is take each dictionary word and check if it's a substring of
+// our searched word
+
+// if it is we create a new search string by cutting the dictionary word and
+// recursing to the next
+
 // if searched item is empty() we have a full solution, print, return
 
 // 1. go through dict and
@@ -56,6 +62,27 @@ search(const vector<string>& dict,
   }
 }
 
+// this works in a slightly different approch
+
+// we start with substrings of searched word from index I 0 to size
+// incrementally
+
+// if the index I is cached as true it means the solution is possible and
+// start another subtring search from I+1
+
+// the new substring shall be from J= I + 1 up to size
+
+// we repeat this second substring search while index J is smaller than
+// size and the dictionary contains it
+
+// if J reaches size it means we have a solution
+
+// otherwise continue first substring search using I
+
+// the trick is that an incremented I could very well match the cache because of
+// the J search
+
+// magic
 void
 searchDp(const vector<string>& dict, const string& searched)
 {
@@ -124,6 +151,8 @@ main()
   const string s{ "mousepad" };
 
   search(dict, 0, s, sol);
+
+  searchDp(dict, s);
 
   return 0;
 }

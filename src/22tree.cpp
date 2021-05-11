@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -45,16 +46,19 @@ checkEm(node* tree, node* sub, node* tnext, node* snext)
   return;
 }
 
+// for some reason i cannot comprehend inOrder traversal can be used to
+// determine if a tree is a subtree of another
 void
-print(node* n)
+inOrder(node* n, string& vals, bool print = false)
 {
-
   if (!n)
     return;
 
-  cout << n->val << " ";
-  print(n->left);
-  print(n->right);
+  inOrder(n->left, vals, print);
+  if (print)
+    cout << n->val << " ";
+  vals += n->val;
+  inOrder(n->right, vals, print);
 }
 
 int
@@ -84,23 +88,28 @@ main()
   node b2(6);
   a2.left = &b2;
 
-  print(&root);
-  cout << "\n";
-
-  print(&root2);
-  cout << "\n";
-
   node root3(4);
   node a3(5);
   root3.right = &a3;
   node b3(6);
   a3.right = &b3;
 
-  print(&root3);
-  cout << "\n";
-
   checkEm(&root, &root2, &root, &root2);
   checkEm(&root, &root3, &root, &root3);
+
+  string first, second, third;
+  inOrder(&root, first, true);
+  cout << "\n";
+  inOrder(&root2, second, true);
+  cout << "\n";
+  inOrder(&root3, third, true);
+  cout << "\n";
+
+  if (first.find(second) != first.npos)
+    cout << "root2 is in root\n";
+
+  if (first.find(third) != first.npos)
+    cout << "root3 is in root\n";
 
   return 0;
 }

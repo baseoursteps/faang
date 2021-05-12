@@ -122,3 +122,7 @@ Algorithm list
 25. Group anagrams
 
     Given a list of strings group anagrams together.
+
+26. Longest path in a binary tree
+
+    Given a binary tree find the longest path from root to leaf. If more than one exist return the leftmost.

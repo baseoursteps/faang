@@ -117,4 +117,8 @@ Algorithm list
 
 24. Queue using stacks
 
-	Implement a queue using stacks.
+    Implement a queue using stacks.
+
+25. Group anagrams
+
+	Given a list of strings group anagrams together.

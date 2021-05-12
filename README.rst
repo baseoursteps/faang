@@ -113,3 +113,8 @@ Algorithm list
     Given two non-empty binary trees check if the first is an identical
     subtree of the second.
 
+23. Longest palindrome substring
+
+24. Queue using stacks
+
+	Implement a queue using stacks.

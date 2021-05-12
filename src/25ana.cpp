@@ -23,10 +23,11 @@ main()
 
     auto&& f = grouped.find(chars);
 
-    if (f != grouped.end())
+    if (f != grouped.end()) {
       f->second.push_back(w);
-    else
+    } else {
       grouped.insert({ chars, { w } });
+    }
   }
 
   for (auto&& [k, v] : grouped) {

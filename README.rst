@@ -121,4 +121,4 @@ Algorithm list
 
 25. Group anagrams
 
-	Given a list of strings group anagrams together.
+    Given a list of strings group anagrams together.

@@ -19,28 +19,27 @@
 int
 main()
 {
-  using namespace std;
+    using namespace std;
 
-  deque<size_t> ropes{ 8, 4, 6, 12 };
-  size_t cost{ 0 };
+    deque<size_t> ropes { 8, 4, 6, 12 };
+    size_t        cost { 0 };
 
-  for (ssize_t i = ropes.size() / 2 - 1; i >= 0; --i)
-    heapify(ropes, ropes.size(), i, false);
+    for (ssize_t i = ropes.size() / 2 - 1; i >= 0; --i)
+        heapify(ropes, ropes.size(), i, false);
 
-  while (ropes.size() > 1) {
+    while (ropes.size() > 1) {
+        auto sum = ropes.front();
 
-    auto sum = ropes.front();
+        ropes.pop_front();
 
-    ropes.pop_front();
+        heapify(ropes, ropes.size(), 0, false);
 
-    heapify(ropes, ropes.size(), 0, false);
+        cost += ropes.front() += sum;
 
-    cost += ropes.front() += sum;
+        heapify(ropes, ropes.size(), 0, false);
+    }
 
-    heapify(ropes, ropes.size(), 0, false);
-  }
+    cout << cost << "\n";
 
-  cout << cost << "\n";
-
-  return 0;
+    return 0;
 }

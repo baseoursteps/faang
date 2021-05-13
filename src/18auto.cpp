@@ -5,44 +5,44 @@
 using namespace std;
 
 vector<string>
-opts(const string& word, const vector<string>& opts)
+opts(const string &word, const vector<string> &opts)
 {
-  vector<string> vars;
+    vector<string> vars;
 
-  for (auto&& o : opts) {
-    bool ok = true;
-    if (equal(word.begin(), word.end(), o.begin()))
-      vars.push_back(o);
+    for (auto &&o : opts) {
+        bool ok = true;
+        if (equal(word.begin(), word.end(), o.begin()))
+            vars.push_back(o);
 
-    if (vars.size() == 3)
-      break;
-  }
+        if (vars.size() == 3)
+            break;
+    }
 
-  return vars;
+    return vars;
 }
 
 int
 main()
 {
+    vector<string> sugg { { "mobile" },
+                          { "mouse" },
+                          { "moneypot" },
+                          { "monitor" },
+                          { "mousepad" } };
 
-  vector<string> sugg{
-    { "mobile" }, { "mouse" }, { "moneypot" }, { "monitor" }, { "mousepad" }
-  };
+    sort(sugg.begin(), sugg.end());
 
-  sort(sugg.begin(), sugg.end());
+    const string mouse { "mouse" };
 
-  const string mouse{ "mouse" };
+    for (auto i = 1; i <= mouse.size(); ++i) {
+        const string search(mouse.begin(), mouse.begin() + i);
 
-  for (auto i = 1; i <= mouse.size(); ++i) {
+        auto rez = opts(search, sugg);
 
-    const string search(mouse.begin(), mouse.begin() + i);
+        cout << "for '" << search << "' we have:\n";
+        for (auto &&s : rez)
+            cout << "\t" << s << "\n";
+    }
 
-    auto rez = opts(search, sugg);
-
-    cout << "for '" << search << "' we have:\n";
-    for (auto&& s : rez)
-      cout << "\t" << s << "\n";
-  }
-
-  return 0;
+    return 0;
 }

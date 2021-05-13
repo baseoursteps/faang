@@ -35,26 +35,26 @@ using namespace std;
 size_t
 navigate(vector<vector<bool>> map, ssize_t x, ssize_t y)
 {
-  if (x < 0 || x >= map.size() || y < 0 || y >= map.at(x).size())
-    return 0;
+    if (x < 0 || x >= map.size() || y < 0 || y >= map.at(x).size())
+        return 0;
 
-  if (map.at(x).at(y))
-    return 0;
+    if (map.at(x).at(y))
+        return 0;
 
-  if (x == map.size() - 1 && y == map.at(x).size() - 1)
-    return 1;
+    if (x == map.size() - 1 && y == map.at(x).size() - 1)
+        return 1;
 
-  size_t count = 0;
-  map.at(x).at(y) = 1;
+    size_t count    = 0;
+    map.at(x).at(y) = 1;
 
-  count += navigate(map, x + 1, y);
-  count += navigate(map, x - 1, y);
-  count += navigate(map, x, y + 1);
-  count += navigate(map, x, y - 1);
+    count += navigate(map, x + 1, y);
+    count += navigate(map, x - 1, y);
+    count += navigate(map, x, y + 1);
+    count += navigate(map, x, y - 1);
 
-  map.at(x).at(y) = 0;
+    map.at(x).at(y) = 0;
 
-  return count;
+    return count;
 }
 
 // THIS SOLUTION ASSUMES THAT WE CAN NAVIGATE ONLY DOWN AND TO THE RIGHT
@@ -75,66 +75,63 @@ navigate(vector<vector<bool>> map, ssize_t x, ssize_t y)
 
 // TODO Could this be modified to account for all directions?
 size_t
-navigateDp(const vector<vector<bool>>& map)
+navigateDp(const vector<vector<bool>> &map)
 {
+    vector<vector<size_t>> counts(map.size(),
+                                  vector<size_t>(map.back().size(), 0));
 
-  vector<vector<size_t>> counts(map.size(),
-                                vector<size_t>(map.back().size(), 0));
+    // the destination is 1
+    counts.back().back() = 1;
 
-  // the destination is 1
-  counts.back().back() = 1;
+    for (ssize_t i = map.size() - 1; i >= 0; --i)
+        for (ssize_t j = map.at(i).size() - 1; j >= 0; --j) {
+            size_t count = 0;
 
-  for (ssize_t i = map.size() - 1; i >= 0; --i)
-    for (ssize_t j = map.at(i).size() - 1; j >= 0; --j) {
+            // down
+            if (i + 1 >= map.size() || map.at(i + 1).at(j))
+                count += 0;
+            else
+                count += counts.at(i + 1).at(j);
 
-      size_t count = 0;
+            // right
+            if (j + 1 >= map.at(i).size() || map.at(i).at(j + 1))
+                count += 0;
+            else
+                count += counts.at(i).at(j + 1);
 
-      // down
-      if (i + 1 >= map.size() || map.at(i + 1).at(j))
-        count += 0;
-      else
-        count += counts.at(i + 1).at(j);
+            // this is in order not to overwrite the destination
+            if (!counts.at(i).at(j))
+                counts.at(i).at(j) = count;
+        }
 
-      // right
-      if (j + 1 >= map.at(i).size() || map.at(i).at(j + 1))
-        count += 0;
-      else
-        count += counts.at(i).at(j + 1);
-
-      // this is in order not to overwrite the destination
-      if (!counts.at(i).at(j))
-        counts.at(i).at(j) = count;
-    }
-
-  return counts.front().front();
+    return counts.front().front();
 }
 
 int
 main()
 {
+    // 2
+    // vector<vector<bool>> map{ { 0, 1, 0 }, { 0, 0, 1 }, { 0, 0, 0 } };
 
-  // 2
-  // vector<vector<bool>> map{ { 0, 1, 0 }, { 0, 0, 1 }, { 0, 0, 0 } };
+    // 2
+    vector<vector<bool>> map { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
 
-  // 2
-  vector<vector<bool>> map{ { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
+    // 12/6
+    // vector<vector<bool>> map(3, vector<bool>(3, false));
 
-  // 12/6
-  // vector<vector<bool>> map(3, vector<bool>(3, false));
+    // first check if start and begin are accesible
+    if (map.front().front() == 1 || map.back().back() == 1) {
+        cout << 0 << "\n";
+        return 0;
+    }
 
-  // first check if start and begin are accesible
-  if (map.front().front() == 1 || map.back().back() == 1) {
-    cout << 0 << "\n";
+    // return count
+
+    // size_t count = navigate(map, 0, 0)
+
+    size_t count = navigateDp(map);
+
+    cout << count << "\n";
+
     return 0;
-  }
-
-  // return count
-
-  // size_t count = navigate(map, 0, 0)
-
-  size_t count = navigateDp(map);
-
-  cout << count << "\n";
-
-  return 0;
 }

@@ -8,34 +8,33 @@ using namespace std;
 int
 main()
 {
+    const vector<string> words { "eat", "tea", "tan", "ate", "nat", "bat" };
 
-  const vector<string> words{ "eat", "tea", "tan", "ate", "nat", "bat" };
+    // for each word split into a vector of chars and sort
 
-  // for each word split into a vector of chars and sort
+    // keep a map of sorted word chars -> vector of words
 
-  // keep a map of sorted word chars -> vector of words
+    map<vector<char>, vector<string>> grouped;
 
-  map<vector<char>, vector<string>> grouped;
+    for (auto &&w : words) {
+        vector<char> chars(w.begin(), w.end());
+        sort(chars.begin(), chars.end());
 
-  for (auto&& w : words) {
-    vector<char> chars(w.begin(), w.end());
-    sort(chars.begin(), chars.end());
+        auto &&f = grouped.find(chars);
 
-    auto&& f = grouped.find(chars);
-
-    if (f != grouped.end()) {
-      f->second.push_back(w);
-    } else {
-      grouped.insert({ chars, { w } });
+        if (f != grouped.end()) {
+            f->second.push_back(w);
+        } else {
+            grouped.insert({ chars, { w } });
+        }
     }
-  }
 
-  for (auto&& [k, v] : grouped) {
-    for (auto&& w : v) {
-      cout << "'" << w << "' ";
+    for (auto &&[k, v] : grouped) {
+        for (auto &&w : v) {
+            cout << "'" << w << "' ";
+        }
+        cout << "\n";
     }
-    cout << "\n";
-  }
 
-  return 0;
+    return 0;
 }

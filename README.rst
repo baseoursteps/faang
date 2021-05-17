@@ -138,4 +138,4 @@ Algorithm list
 
 29. Reverse a linked list in k-sized slots
 
-	
+30. 

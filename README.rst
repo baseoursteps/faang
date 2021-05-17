@@ -130,3 +130,12 @@ Algorithm list
 27. Is a number duodecimal
 
     Given any number asses if it has more than two different decimals.
+
+28. Find next greater item
+
+    Given an array of N elements output the next greater element to the right
+    of the current one.
+
+29. Reverse a linked list in k-sized slots
+
+	

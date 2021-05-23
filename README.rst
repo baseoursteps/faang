@@ -179,3 +179,8 @@ Algorithm list
     | to_postfix("5+(6-2)*9+3^(7-1)")		// "562-9*+371-^+"
     | to_postfix("1^2^3")					// "123^^"
     | to_postfix("3*3/(7+1*(5+5/(9-4))-2)") // "33*715594-/+*+2-/"
+
+35. Shortest knight path
+
+    Given two positions on a chess board find least no of valid knight
+    moves from start to destination.

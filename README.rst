@@ -153,22 +153,29 @@ Algorithm list
 
 33. Snakes and Ladders
 
-	You have a board from 0,100 filled with ladders and snakes.
+    You have a board from 0,100 filled with ladders and snakes.
 
-	Two players starting at 0. Every player throws two dice and moves forward.
+    Two players starting at 0. Every player throws two dice and moves forward.
 
-	If both dice are identical you roll again.
+    If both dice are identical you roll again.
 
-	If you land on a ladder you advance to its end even on double roll.
+    If you land on a ladder you advance to its end even on double roll.
 
-	If you land on a snake you go back to its tail even on double roll.
+    If you land on a snake you go back to its tail even on double roll.
 
-	To reach the end you need to roll exactly to land on 100, otherwise you bounce back.
-	(e.g. player on 97 rolls 5, reached 100, goes back to 98: 100-((97+5) % 100).
+    To reach the end you need to roll exactly to land on 100, otherwise you bounce back.
+    (e.g. player on 97 rolls 5, reached 100, goes back to 98: 100-((97+5) % 100).
 
-	Return:
+    Return:
 
     * 'Player <n> Wins!'
     * 'Game over!' when a players wants to roll but a player has already won.
     * 'Player <n> is on square <x>.' otherwise.
 
+34. Infix to postfix converter
+
+    | to_postfix("2+7*5")					// "275*+"
+    | to_postfix("3*3/(7+1)")				// "33*71+/"
+    | to_postfix("5+(6-2)*9+3^(7-1)")		// "562-9*+371-^+"
+    | to_postfix("1^2^3")					// "123^^"
+    | to_postfix("3*3/(7+1*(5+5/(9-4))-2)") // "33*715594-/+*+2-/"

@@ -184,3 +184,22 @@ Algorithm list
 
     Given two positions on a chess board find least no of valid knight
     moves from start to destination.
+
+36. Get the loop
+
+    Given a linked list that at some point has a loop find the loop length.
+    There can be any number of elements before the loop starts.
+
+37. # of reduced fractions
+
+    Given a denominator D find all reduced fractions i.e. that cannot be
+    reduced further. 1/4(ok), 2/4(not)
+
+38. Centre of attention
+
+    Given an image represented as a vector of pixels(uints), width, and
+    height find for any such pixel the deepest i.e. the one which is
+    farthest away from the margin or any other pixel of another color.
+    There can be multiples pixels of the same depth and the indeces of
+    all must be returned.
+    

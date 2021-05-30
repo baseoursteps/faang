@@ -195,7 +195,7 @@ Algorithm list
     Given a denominator D find all reduced fractions i.e. that cannot be
     reduced further. 1/4(ok), 2/4(not)
 
-38. Centre of attention
+38. !Centre of attention
 
     Given an image represented as a vector of pixels(uints), width, and
     height find for any such pixel the deepest i.e. the one which is
@@ -203,3 +203,20 @@ Algorithm list
     There can be multiples pixels of the same depth and the indeces of
     all must be returned.
     
+39. Replace spaces with '%20'
+
+    Replace all spaces in a string with %20 without using insert, replace, regex,
+    etc. You can assume the string has enough space at the end to accomodate
+    the new characthers.
+
+40. One way
+
+    There are three operations for strings: insert, remove, replace. Determine
+    if two strings differ by only one operation.
+
+41. String compression
+
+    Basic compression of repeated chars. if resulting string is bigger return
+    the original. e.g. aabcccccaaa -> a2b1c5a3
+
+42. !Rotate a matrix 90⁰

@@ -220,3 +220,13 @@ Algorithm list
     the original. e.g. aabcccccaaa -> a2b1c5a3
 
 42. !Rotate a matrix 90⁰
+
+43. Given a number N, compute the minimum number of operations to reduce it to 0,
+    either adding or substracting 2^i where i>=0.
+
+44. We have a graph G, with N nodes indexed from 1, three arrays `from`, `to`, `weight`,
+    where for an edge `i` we have `from[i] = source_node`, `to[i] = destination_node`,
+    and `weight[i] = cost`.
+    To go from one node to another we need energy which can be acquired in each node at
+    a cost of specified in array `energy_price`.
+    Compute the minimum cost required from `A` to `B` or return `-1`.
